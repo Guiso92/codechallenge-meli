@@ -25,7 +25,7 @@ export const findAll = async (query: string): Promise<BaseData> => {
         picture: x.thumbnail,
         condition: x.condition,
         free_shipping: x.shipping.free_shipping,
-        address: x.address.state_name
+        address: x.address.state_name,
       };
     });
     categories = [...new Set(categories)];
@@ -49,7 +49,9 @@ export const find = async (productId: string): Promise<Item> => {
   let data: Item;
 
   try {
-    const itemTmp = await fetch(`https://api.mercadolibre.com/items/${productId}`);
+    const itemTmp = await fetch(
+      `https://api.mercadolibre.com/items/${productId}`
+    );
     const item = await itemTmp.json();
     const url = `https://api.mercadolibre.com/items/${productId}/description`;
     const descTmp = await fetch(url);
@@ -63,6 +65,7 @@ export const find = async (productId: string): Promise<Item> => {
       condition,
       shipping: { free_shipping },
       sold_quantity,
+      permalink,
     } = item;
 
     data = {
@@ -83,6 +86,7 @@ export const find = async (productId: string): Promise<Item> => {
         free_shipping,
         sold_quantity,
         description: desc.plain_text,
+        link: permalink,
       },
     };
   } catch (err) {

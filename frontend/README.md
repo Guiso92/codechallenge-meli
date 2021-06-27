@@ -1,4 +1,4 @@
-# meli-codechallenge
+# Frontend
 
 This is a code challenge for [Mercado Libre Argentina](https://www.mercadolibre.com.ar/).
 

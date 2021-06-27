@@ -56,7 +56,7 @@ export default function Details() {
               </div>
               <div className="details-info-button-container">
                 <a
-                  href={data.item.permalink}
+                  href={data.item.link}
                   target="blank"
                   className="details-info-button"
                 >
