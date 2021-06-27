@@ -1,0 +1,42 @@
+@import "../shared/styles/variables";
+
+.search {
+  &-bar {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $primary;
+    border: 0;
+    position: relative;
+    padding: 8px 1px;
+    height: auto;
+  }
+  &-container {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 2%;
+    @media(min-width: $desktopBreakpoint) {
+      margin: $generalMargin
+    }
+  }
+  &-logo{
+    width: 100%;
+    &-link {
+      margin-right: 2%;
+    }
+  }
+  &-input {
+    border: none;
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+    padding: 0 15px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  &-button {
+    border: none;
+    padding: 0 12px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+  }
+}

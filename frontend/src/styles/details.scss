@@ -1,0 +1,77 @@
+@import "../shared/styles/variables";
+
+.details {
+  margin: $generalMargin;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 2em;
+  padding: 1.5em 2em;
+  &-loading {
+      height: 80vh;
+  }
+  &-data {
+    display: flex;
+    flex-direction: column;
+    @media(min-width: $desktopBreakpoint) {
+      flex-direction: row;
+    }
+  }
+  &-image {
+      max-width: 95%;
+      &-container {
+        width: 100%;
+        @media(min-width: $desktopBreakpoint) {
+          width: 70%;
+        }
+        display: flex;
+        justify-content: center;
+      }
+  }
+  &-info-container {
+    width: 100%;
+    @media(min-width: $desktopBreakpoint) {
+      width: 30%;
+    }
+  }
+  &-info-title {
+    font-size: 22px;
+    margin-top: 0.2em;
+    word-break: break-word;
+    &-container {
+      width: 90%;
+    }
+  }
+  &-info-button {
+    text-decoration: none;
+    @include button($secondary, #fff, $hover);
+    &:active {
+      color: #fff;
+    }
+    &-container {
+      height: 40px;
+      margin-top: 10%;
+    }
+  }
+  &-info-price {
+    font-size: 36px;
+  }
+  &-description {
+    width: 100%;
+    @media(min-width: $desktopBreakpoint) {
+      width: 70%;
+    }
+    margin-top: 8%;
+    &-title {
+      font-size: 26px;
+    }
+    &-paragraph {
+      text-align: justify;
+      color: #a2a0a0;
+      font-size: 13px;
+    }
+  }
+  .no-results {
+      display: flex;
+      justify-content: center;
+  }
+}
